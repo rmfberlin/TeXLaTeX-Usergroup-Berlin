@@ -1,5 +1,5 @@
-#TeXLaTeX-Usergroup Berlin
-##Vorlagen und Beispiele aus und für die Praxis
+# TeXLaTeX-Usergroup Berlin
+## Vorlagen und Beispiele aus und für die Praxis
 
 Tex/LaTeX ist ein ausgereiftes Open Source Textsatz-System, mit dem man größere Schriftstücke wie Bücher, Diplomarbeiten, Masterarbeiten und Artikel erstellen kann. Da LaTeX ausgezeichnete Funktionalitäten zur Erstellung von Literaturlisten, Indexen und Glossaren bietet, ist es eine ideale Wahl für die Erstellung von wissenschaftlichen Arbeiten.
 
@@ -11,7 +11,7 @@ Am Beispiel von den KOMA-Script-Klassen für Artikel, Reports/Berichte und Büch
 
 Ergänzungen, Verbesserungen und konstruktive Kommentare sind herzlich willkommen.
 
-##Tex/LaTeX Usergroup Berlin
+## Tex/LaTeX Usergroup Berlin
 Die Tex/LaTeX Usergroup <https://www.meetup.com/de-DE/Berliner-Usergroup-TexLaTeX> ist offen für alle, die an typografisch korrekten und schönen Lösungen ihrer Texte interessiert sind und ihr Wissen gerne mit anderen teilen. In den Treffen kannst du Unterstützung für dein aktuelles LaTeX-Projekt erhalten und anderen bei ihren Projekten behilflich sein.
 
 Den eigenen Laptop mitzubringen ist auf jeden Fall von Vorteil.
