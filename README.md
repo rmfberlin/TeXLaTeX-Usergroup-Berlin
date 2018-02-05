@@ -7,7 +7,7 @@ Auch im Alltag lassen sich viele schriftlichen Arbeiten wie Briefe, Rechnungen, 
 
 Seit Mitte 2017 gibt es in Berlin eine Usergroup für das freie Textsatzsystem. Hier werden praktische Übungen und Beispiele veröffentlicht, mit denen jede/r gleich starten kann.
 
-Am Beispiel von den KOMA-Script-Klassen für Artikel, Reports/Berichte und Bücher wird gezeigt, wie man schnell zu Ergebnissen kommen kann. 
+Am Beispiel von den KOMA-Script-Klassen für Artikel, Reports/Berichte und Bücher wird gezeigt, wie man schnell zu Ergebnissen kommen kann. Für ein besseres Verständnis wird ausdrücklich empfohlen, sich in den jeweiligen *.tex-Dateien den Quellcode und die Kommentare dort sehr genau anzusehen.
 
 Ergänzungen, Verbesserungen und konstruktive Kommentare sind herzlich willkommen.
 

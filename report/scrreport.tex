@@ -27,6 +27,16 @@
 				% 	mit Titelblatt
 				%	Siehe auch Musterdatei scrbook.tex für Bücher
 %
+\usepackage{xltxtra}	%	This package automatically loads the following packages: fontspec, realscripts, metalogo.
+\usepackage{microtype}	%	für schönere Microtypografie
+%
+%
+% Abstand der Fußnotenziffer vom Text regulieren, gefunden in https://tex.stackexchange.com/questions/403022/6mm-spacing-between-footnote-number-and-text am 5.2.2018
+% \deffootnote[<mark indent>]{<indent>}{<par indent>}{<format code>}
+\deffootnote{\dimexpr1em+6pt}{0em}{\thefootnotemark\hspace{6pt}}	% 6pt als die Hälfte der gewählten Schriftgröße von 12pt (s. documentclass)
+% Siehe auch http://www.typolexikon.de/fussnote/
+%
+%
 \usepackage{graphicx}
 % \usepackage{MnSymbol} % Minion Pro Symbols
 % \usepackage{marvosym} % more symbols
@@ -72,7 +82,7 @@
 
 % Pakete für die Beispiel-Texte
 \usepackage{blindtext}	%	für die Blindtexte
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames]{xcolor} % für farbige Hintergünde und farbige Schriften
 \newcommand{\inlinecode}[1]{\colorbox{Gainsboro}{\textsf{\textbackslash#1}}} % für den LaTeX-Code im Fließtext
 \newcommand{\inlinebefehl}[1]{\colorbox{Gainsboro}{\textsf{#1}}} % für den LaTeX-Code im Fließtext
 % Pakete für das Literaturverzeichnis
@@ -97,7 +107,7 @@
 \maketitle
 \tableofcontents
 \chapter{Aufbau  der Gliederung} % (fold)
-	\label{cha:1kapitel}
+	\label{cha:aufbauGliederung}
 	Dieses Dokument basiert auf der Report-Klasse von KOMA-Script. \autocite{komascript:doku}	% unser erstes Zitat mit Literaturangabe
 	\section{Kapitel und Abschnitte}
 	\label{sec:KapitelAbschnitte}
@@ -105,7 +115,7 @@
 			
 			Hiermit wird gleich die zweite Fußnote mit dem Befehl \inlinecode{footnote} gezeigt. Die erste Fußnote wurde durch die Referenz zur Literatur erzeugt.
 			
-			Es wird empfohlen jeder Gliederungsstufe, ein  \inlinecode{label} und eine Zeile \colorbox{Gainsboro}{\textsf{\% end Gliederungsstufe}} hinzuzufügen. Der Befehl \inlinecode{label} wird für die Querverweise innerhalb des Dokuments benötigt.\autocite[40]{schlosser}
+			Es wird empfohlen jeder Gliederungsstufe, ein  \inlinecode{label} und eine Zeile \colorbox{Gainsboro}{\textsf{\% Gliederungsstufe (end)}} hinzuzufügen. Der Befehl \inlinecode{label} wird für die Querverweise innerhalb des Dokuments benötigt.\autocite[40]{schlosser}
 			
 			Für den besseren Überblick gibt man dem Argument für \inlinecode{label} ein Kürzel -- eine Art Etikett -- voranzustellen, z.\,B. cha: für chapter oder sec: für Abschnitt.\autocite[71]{schlosser}
 	% section{Kapitel und Abschnitte} (end)
@@ -176,6 +186,11 @@
 			Auflistungen lassen sich vielfältig anpassen und gestalten.\autocite{schlosser}
 		% subsection nummerierte aufzählungen (end)
 	% section aufzählungen (end)
+	
+	% \section{Querverweise}
+	% \label{sec:querverweise}
+	
+	% section{Querverweise (end)}
 % chapter aufbau gliederung (end)
 
 \chapter{Werkzeuge}
@@ -193,7 +208,9 @@
 
 	Ein Editor ist das ganz persönliche Werkzeug, das sich in die eigene Hand schmiegen muss.  Im Folgenden sind Editoren aufgelistet, die frei und Open Source Software sind und für alle drei Betriebssysteme Windows, macOS und Linux zur Verfügung stehen.\footnote{Wer nur auf dem Mac \LaTeX-Dokumente erstellen will, dem sei Textmate von \href{https://macromates.com/}{https://macromates.com/} ausdrücklich empfohlen.} Alle Editoren können zwischen dem erzeugten PDF und dem \LaTeX-Quelltext schnell und einfach hin- und hergespringen. Rechtschreibprüfung für viele Sprachen sind zuschaltbar.
 
-	Zunächst folgen auf \LaTeX spezialisierte Editoren, dann Editoren, die mehr als eine (Computer-)Sprache verstehen. 
+	Zunächst folgen auf \LaTeX spezialisierte Editoren, dann Editoren, die mehr als eine (Computer"=)Sprache verstehen. 
+	% Beachte "= bei (Computer"=)Sprache. Das ist ein shorthand um eine Trennung innerhalb des Wortes Computer zuzulassen. Sonst führen Bindstriche dazu, dass das Wort bis zum Bindestrich nicht getrennt werden darf. Siehe auch die Dokumentation zum Paket polyglossia bei den Spracheinstellungen zu german/deutsch.
+
 	\subsection{TeXstudio/Texmaker}
 	\label{sub:TeXStudioTexMaker}
 		TeXstudio\autocite{texstudio} und Texmaker\autocite{texmaker} sind auf das Erstellen von \LaTeX-Dokumenten hoch spezialisiert. Sie bieten eine große Funktionsvielfalt. Das kann auch zugleich ein Problem sein. Ein geisteswissenschaftliche oder eine juristische Arbeit nutzt einen anderen Befehlsvorrat aus dem großen \LaTeX-Kosmos als eine Arbeit aus den Bereichen Mathematik, Informatik, Technik oder Naturwissenschaften. 
@@ -246,7 +263,7 @@ JabRef ist ein freier und  open source Literatur-Referenz Manager. JabRef basier
 % % section{Literaturverzeichnis} (end)
 % chapter{Werkzeuge} (end)
 
-
+\nocite{*}	%	Das gesamte Literaturverzeichnis ausgeben, auch die Einträge, die nicht im Text zitiert wurden.
 
 \printbibliography[title={Literaturverzeichnis und Web-Links}]	% Literaturverzeichnis umbenennen
 	
