@@ -74,6 +74,7 @@
 \usepackage{blindtext}	%	für die Blindtexte
 \usepackage[svgnames]{xcolor}
 \newcommand{\inlinecode}[1]{\colorbox{Gainsboro}{\textsf{\textbackslash#1}}} % für den LaTeX-Code im Fließtext
+\newcommand{\inlinebefehl}[1]{\colorbox{Gainsboro}{\textsf{#1}}} % für den LaTeX-Code im Fließtext
 % Pakete für das Literaturverzeichnis
 \usepackage[%
 			style=footnote-dw,%
@@ -215,6 +216,13 @@
 
 	% subsection{Visual Studio Code} (end)
 % section{Editor} (end)
+
+\section{texdoc}
+\label{texdoc}
+Vielen Anfänger*innen unbekannt ist der Befehl \inlinebefehl{texdoc}. \inlinebefehl{texdoc} ist ein Kommandozeilenprogramm, dass die Dokumentation zu einem \LaTeX-Paket zeigt. Durch die Dokumentationen kann in vielen Fällen die beste Hilfe zu den jeweiligen Paketen erhalten werden. Allerdings ist die Sprache der Paketdokumentationen oftmals Englisch. 
+
+Um  \inlinebefehl{texdoc} aufzurufen, muss man ein Terminal-Fenster öffnen und den Befehl \\\inlinebefehl{texdoc name\_des\_pakets} eingeben. Zum Beispiel öffnet \inlinebefehl{texdoc url} die Dokumentation zum Paket \enquote{url.sty} in der Version 3.4 von Donald Arseneau, zuletzt aktualisiert am 2013-09-16. Dieses Paket wird in diesem Dokument benutzt, um Webadressen anzuzeigen.
+% section{texdoc} (end)
 
 \section{Git}
 \label{Git}
