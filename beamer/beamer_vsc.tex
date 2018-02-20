@@ -1,0 +1,237 @@
+% !TEX TS-program = xelatex
+\documentclass[t, % 
+							% draft,%
+							% handout,%
+							xcolor=dvipsnames,%
+							% compress,
+							hyperref={bookmarks,colorlinks},%
+							% smaller,% Grundschrift 10pt
+							]%
+							{beamer}
+
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
+
+\usepackage{xltxtra,% automatically loads the following packages: fontspec, realscripts, metalogo
+						microtype}
+% \usepackage{expdlist}
+%Spracheinstellungen
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling = new, babelshorthands = true]{german}
+\usepackage[right]{eurosym}	% Euro symbol that is constructed according to the official European Commision’s definitions
+\usepackage{dirtree}	% nützliches Paket für Verzeichnisbäume
+\usepackage{array}	% new implementation of LATEX’s tabular and array environment
+\usepackage{ragged2e}	% für bessere Umbrüche mit Silbentrennung bei Flattersatz
+\justifying
+\RequirePackage{ragged2e} 
+\addtobeamertemplate{column begin}{}{\justifying}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{enumitem}	%to ease customizing the three basic list environments: enumerate, itemize and description
+\setlist[description]{leftmargin=24pt}	% Einrückung der description-Aufzählung festlegen
+% beamer templates, restoring font, color and template of the current beamer theme  gefunden in https://tex.stackexchange.com/questions/24371/does-enumitem-conflict-with-beamer-for-lists
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+\usepackage[autostyle=true,german=guillemets]{csquotes}
+
+% TODO: Heinweis von Sven Seite x von Y einfügen
+\usepackage{xurl}	%xurl loads package url by default and de nes possible url breaks for all alphanumerical characters and = / . : * - ~ ' "
+\usepackage{hyperref}
+\hypersetup{
+  bookmarksopenlevel=1,
+	unicode=true,
+	pdfauthor={Rainer-Maria Fritsch},
+	pdftitle={TeXLaTeX Usergroup Berlin},
+	pdfsubject={Einführung in Visual Studio Code/git},
+	breaklinks,hidelinks,
+  colorlinks=true,%
+  % linkcolor=black,% Print-PDF
+  % urlcolor=black,%
+  linkcolor=blue,% Online-PDF
+  urlcolor=blue,%
+  citecolor=orange,
+	filecolor=orange,
+}
+	
+% Farbeinstellungen
+% s.a. http://texwelt.de/wissen/fragen/5434/wie-kann-ich-in-beamer-beim-colortheme-seahorse-die-farbe-der-rechten-spalte-und-der-zeile-oben-andern
+% \colorlet{mystructure}{gray!30!black}
+% \usecolortheme[named=mystructure]{structure}
+\setbeamercolor{item}{fg=blue}
+% Beamer-Theme
+% http://www.hartwork.org/beamer-theme-matrix/
+\usetheme{Goettingen}
+% \usecolortheme{whale}
+\usecolortheme{default}
+
+
+
+%
+% Die Themen für Schriftzeichen bestimmen die Schriftart.
+\usefonttheme{professionalfonts}
+%
+% Innere Themen spezifizieren die inneren Elemente wie Kopf-, Fußzeile, Sidebar usw. einer Folie.
+\useinnertheme{rounded}
+% Äußere Themen spezifizieren die Grenzen einer Folie und sagen ob und wo die inneren Elemente liegen.
+\useoutertheme{infolines}
+
+% Um halbtransparente Overlays auf seinen Folien zu haben, reicht es folgenden Schalter zu setzen:
+\setbeamercovered{transparent=10}
+
+%
+% Seitenzahlen in Fußzeile einfügen
+\setbeamertemplate{footline}[frame number]
+
+% Navigationssymbole unterdrücken:
+\setbeamertemplate{navigation symbols}{}
+
+% Metainformationen
+% 
+% Titel des Vortrages
+\title[Kurzer Titel]{Visual Studio Code}
+% Untertitel
+\subtitle[]{Eine Arbeitsumgebung für \LaTeX}
+% Autor festlegen
+\author[RMF]{TeXLaTeX Usergroup Berlin\\\small{Rainer-Maria Fritsch}}
+% Datum der Präsentation, alternativ kann mittels \date{\today} auch das aktuelle Datum eingetragen werden.
+\date[\today]{\today}
+%
+%%%%% Ende Präambel %%%%%
+
+
+
+\begin{document}
+	\begin{frame}{}
+		\maketitle
+		\begin{center} 
+			\tiny{Präsentation erstellt mit {\LaTeX}-Beamer} 
+		\end{center}
+		
+	\end{frame}
+	
+	\begin{frame}{Was Sie erwartet\ldots}
+		\setcounter{tocdepth}{1}
+		\tableofcontents
+	\end{frame}
+	
+	% Vor jedem Abschnitt automatisch Inhaltsverzeichnis anzeigen:
+	\AtBeginSection[]{
+		\begin{frame}
+		\setcounter{tocdepth}{2}
+		\tableofcontents[currentsection]
+    \end{frame}
+	}
+	
+	\section{Ein neuer Abschnitt}
+	\label{sec:EinneuerAbschnitt}
+		sdljflksdjfkllksdf
+		Öldsfldsf
+		lödsföldsf
+		\begin{itemize}
+			\item Einschraenkungen
+			\item Microsoft
+			\item Störerhaftung
+			\item sdjkfkasdfg
+			\item Störerhaftung sf 
+		\end{itemize}
+	% \section{Ein neuer Abschnitt}	(end)
+  
+  \section{Visual Studio Code}
+  \label{sec:VisualStudioCode}
+    \subsection{Vorteile}
+		\label{sub:Vorteile}
+		\begin{frame}<handout:1|beamer:1>[c]
+			\frametitle{Vorzüge}
+			\begin{itemize}
+				\item Für alle Betriebssysteme verfügbar, gleiches \enquote{Look and Feel}
+				\item freie und offene Software (Maintainer Microsoft)
+				\item viele hervorragende Plugins
+				\item große Entwicklergemeinschaft
+				\item für viele Programmiersprachen
+				\item deutsche Oberfläche, deutsche Rechtschreibkorrektur
+				\item verschiedene Arbeitsbereiche für Projekte
+				\item git-Integration
+			\end{itemize}
+		\end{frame}
+		% subsection{Vorteile} (end)
+		
+		\subsection{Einschränkungen}
+		\label{sub:Einschraenkungen}
+		\begin{frame}
+			\frametitle{\enquote{Einschränkungen} als \LaTeX-Editor}
+			\begin{itemize}
+				\item vorrangig für Entwickler*innen gemacht
+				\item Debuggen und Aufgaben
+				\item für die  Entwicklung von Webanwendungen 
+				\item individuelle Anpassungen gewöhnungsbedürftig
+				\item aber letztendlich genial
+			\end{itemize}
+		\end{frame}
+		% subsection{Einschränkungen} (end)
+
+		\subsection{Vorzüge als \LaTeX-Editor}
+		\label{sub:VorzuegeLaTeXEditor}
+		\begin{frame}
+			\frametitle{Vorzüge als \LaTeX-Editor}
+			Visual Studio Code mit Plugin LaTeX Workshop (624.200 mal installiert)
+			\begin{itemize}
+				\item Syntax-Highlighting
+				\item Vorschläge für Befehle beim Tippen
+				\item Wiederholung von Begriffen, die vorher schon einmal eingegeben wurden
+				\item automatisches Einrücken des Quelltextes
+				\item erkennt die notwendigen Übersetzungsläufe
+				\item Kennt LaTeX-Direktiven
+				\item Quelltext und PDF liegen nebeneinader
+				\item hin- und herspringen zwischen beiden Dateien per Mausklick
+				\item PDF syncronisiert nicht automatisch; Änderungen an der Präambel können an einer bestimmten Textstelle getestet werden  
+			\end{itemize}
+		\end{frame}
+		% subsection{Vorzüge als \LaTeX-Editor}	(end)
+
+		\subsection{Empfehlenswerte Erweiterungen (Plugins)}
+		\label{sub:EmpfehlenswerteErweiterungen}
+		\begin{frame}
+			\frametitle{Empfehlenswerte Erweiterungen}
+			\begin{description}
+				\item[LaTeX Workshop] Die Erweiterung, die VS Code zur Arbeitsumgebung für \LaTeX\ macht
+				\item[Bookmarks] Sprungmarken an einer Zeile anbringen
+				\item[Code Spell Checker] Rechtschreibkorrektur auch für Quellcode
+				\item[German – Code Spell Checker]Deutsches Wörterbuch dazu
+				\item[TODO Highlight] TODO: und FIXME: als Schlüsselwörter für Aufgaben im Quelltext werden farblich markiert und können auch als Liste ausgegeben werden.\footnote{in den Benutzereinstellungen unter \emph{"todohighlight.include": [...,					
+					"**/*.tex"
+			],} hinzufügen}
+			\end{description}
+		\end{frame}
+		% subsection{Empfehlenswerte Erweiterungen (Plugins)} (end)
+	% section{Visual Studio Code} (end)
+	
+	\section{git – ein Versionskontrollsystem}
+	\label{sec:git-vcs}
+	\begin{frame}
+		\frametitle{git als Versionskontrolle und Backup}
+		Was ist das – Versionskontrolle?
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Quellen}
+		Sehr gute verständliche Anleitung zu git (englisch)\\
+		\url{https://www.git-tower.com/learn/git/ebook/en/command-line/introduction\#start}
+	\end{frame}
+	% section{git – ein Versionskontrollsystem}	(end)
+	
+	% \section{Layout/Design} % 
+% 	\label{sec:layout_design}
+%
+% 	% section layout_design (end)
+		\begin{frame}<handout:0|beamer:1>[c]
+		    \frametitle{Visual Studio Code als Arbeitsumgebung \\für \LaTeX}
+				\animategraphics[height=10mm, autoplay, loop]{6}				{imgpdf/animate_}{0}{10}\Large{Vielen Dank für Ihre Aufmerksamkeit!}\\[1.2\baselineskip]
+				\centering
+				\Huge{Fragen?}
+		\end{frame}
+
+
+
+\end{document}}

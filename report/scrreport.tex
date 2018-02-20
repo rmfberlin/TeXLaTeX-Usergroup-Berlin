@@ -12,6 +12,7 @@
 %	Erstellt: 29.01.2018
 %	letzte Änderung: 01.02.2018
 %	TeX/LaTeX-engine: Übersetzung mit xelatex
+% Codierung: UTF-8
 %
 %
 \AtBeginDocument{%
@@ -20,7 +21,7 @@
 
 \documentclass[12pt,	% 	Schriftgröße auf der auch der Seitenspiegel berechnet wird
 				headings=small,		%	insgesamt kleinere Überschriften
-				toc=bibliography,	%	Literaturverzeichnis ohne Nummerierung ins Inhaltsverzeichnis aufnehmen
+				toc=bibliography,	%	Literaturverzeichnis ohne Nummerierung ins  Inhaltsverzeichnis aufnehmen
 			]	%
 {scrreprt}		% 	für größere, einseitig gedruckte Dokumente mit Kapiteln und Abschnitten 
 				%	wie Seminararbeiten und  sowie Bachelor- und Masterarbeiten 
@@ -28,7 +29,7 @@
 				%	Siehe auch Musterdatei scrbook.tex für Bücher
 %
 \usepackage{xltxtra}	%	This package automatically loads the following packages: fontspec, realscripts, metalogo.
-\usepackage{microtype}	%	für schönere Microtypografie
+\usepackage{microtype}	%	für schönere Microtypographie
 %
 %
 % Abstand der Fußnotenziffer vom Text regulieren, gefunden in https://tex.stackexchange.com/questions/403022/6mm-spacing-between-footnote-number-and-text am 5.2.2018
@@ -65,32 +66,32 @@
 \urlstyle{sf}	% gleicher Font für URL wie für Text
 \usepackage{hyperref}	% wunderbares Paket für die interne Verlinkung aller Referenzen innerhalb des PDF
 \hypersetup{
-    bookmarksopenlevel=1,
+  bookmarksopenlevel=1,
 	unicode=true,
 	pdfauthor={rmfberlin},
 	pdftitle={Beispiel-Datei für eine längere, einseitig gedruckte Arbeit  mit KOMA-Script},
 	pdfsubject={},
 	breaklinks,hidelinks,
-    colorlinks=true,%
-    % linkcolor=black,% Print-PDF
-    % urlcolor=black,%
-    linkcolor=blue,% Online-PDF
-    urlcolor=blue,%
-    citecolor=orange,
-    filecolor=orange,
+  colorlinks=true,%
+  % linkcolor=black,% Print-PDF
+  % urlcolor=black,%
+  linkcolor=blue,% Online-PDF
+  urlcolor=blue,%
+  citecolor=orange,
+  filecolor=orange,
 }
 
 % Pakete für die Beispiel-Texte
 \usepackage{blindtext}	%	für die Blindtexte
-\usepackage[svgnames]{xcolor} % für farbige Hintergünde und farbige Schriften
+\usepackage[svgnames]{xcolor} % für farbige Hintergründe und farbige Schriften
 \newcommand{\inlinecode}[1]{\colorbox{Gainsboro}{\textsf{\textbackslash#1}}} % für den LaTeX-Code im Fließtext
 \newcommand{\inlinebefehl}[1]{\colorbox{Gainsboro}{\textsf{#1}}} % für den LaTeX-Code im Fließtext
 % Pakete für das Literaturverzeichnis
 \usepackage[%
-			style=footnote-dw,%
-			sorting=nty,	%	Sortierung des Literaturverzeicnisses nach (n)ame, (t)itle, (y)ear
-			backend=biber%
-		]%
+	style=footnote-dw,%
+	sorting=nty,	%	Sortierung des Literaturverzeichnisses nach (n)ame, (t)itle, (y)ear
+	backend=biber%
+	]%
 {biblatex}
 \addbibresource{literatur.bib}
 
@@ -111,7 +112,7 @@
 	Dieses Dokument basiert auf der Report-Klasse von KOMA-Script. \autocite{komascript:doku}	% unser erstes Zitat mit Literaturangabe
 	\section{Kapitel und Abschnitte}
 	\label{sec:KapitelAbschnitte}
-			Der Bericht lässt sich in Kapitel \inlinecode{chapter}, Abschnitte \inlinecode{section}, Unterabschnitte \inlinecode{subsection}, Unterunterabschnitte \inlinecode{subsubsection} und auf Gliederungsstufe fünf und sechs noch mit \inlinecode{paragraph} und \inlinecode{subparagraph} gliedern.\footnote{\LaTeX-Befehle sind in \colorbox{Gainsboro}{in graue Boxen} gesetzt.} 
+			Der Bericht lässt sich in Kapitel \inlinecode{chapter}, Abschnitte \inlinecode{section}, Unterabschnitte \inlinecode{subsection},            \autocite[790]{schlosser} Unterunterabschnitte \inlinecode{subsubsection} und auf Gliederungsstufe fünf und sechs noch mit \inlinecode{paragraph} und \inlinecode{subparagraph} gliedern.\footnote{\LaTeX-Befehle sind in \colorbox{Gainsboro}{in graue Boxen} gesetzt.} 
 			
 			Hiermit wird gleich die zweite Fußnote mit dem Befehl \inlinecode{footnote} gezeigt. Die erste Fußnote wurde durch die Referenz zur Literatur erzeugt.
 			
@@ -197,7 +198,7 @@
 \label{cha:werkzeuge}
 \section{Empfehlenswerte Literatur}
 	\label{sec:literaturempfehlung}
-	Für den schnellen und erfolgversprechenden Einstieg in \LaTeX\ lohnt sich das Buch von \textcite{schlosser} und für die normgerechte wissenschaftliche Arbeit das Buch und die Website von \textcite{scholz}(mit Beispieldatei für \LaTeX\autocite{scholz:latexvorlage}).
+	Für den schnellen und erfolgversprechenden Einstieg in \LaTeX\ lohnt sich das Buch von \textcite{schlosser} und für die normgerechte wissenschaftliche Arbeit das Buch und die Website von \textcite{scholz}(mit Beispieldatei für \LaTeX\autocite{scholz:latexvorlage}).\ref{sub:nummerAufzaehlung}
 	% section Empfehlenswerte Literatur (end)
 \section{Editor}
 \label{sec:editor}
@@ -206,7 +207,7 @@
 	
 	Universelle Editoren, die mehrere Computer-Sprachen beherrschen, halte ich jedoch für günstiger, als sich in verschiedene Editor für verschiedene Aufgaben/Sprachen einzuarbeiten. Und universelle Editoren haben meines Erachtens noch einen wichtigen Vorteil: Da diese von vielen unterschiedlichen Programmieren genutzt werden, sind diese auch in ständiger Entwicklung und häufig den eigenen Bedürfnissen und Vorlieben sehr gut anpassbar.
 
-	Ein Editor ist das ganz persönliche Werkzeug, das sich in die eigene Hand schmiegen muss.  Im Folgenden sind Editoren aufgelistet, die frei und Open Source Software sind und für alle drei Betriebssysteme Windows, macOS und Linux zur Verfügung stehen.\footnote{Wer nur auf dem Mac \LaTeX-Dokumente erstellen will, dem sei Textmate von \href{https://macromates.com/}{https://macromates.com/} ausdrücklich empfohlen.} Alle Editoren können zwischen dem erzeugten PDF und dem \LaTeX-Quelltext schnell und einfach hin- und hergespringen. Rechtschreibprüfung für viele Sprachen sind zuschaltbar.
+	Ein Editor ist das ganz persönliche Werkzeug, das sich in die eigene Hand schmiegen muss.  Im Folgenden sind Editoren aufgelistet, die frei und Open Source Software sind und für alle drei Betriebssysteme Windows, macOS und Linux zur Verfügung stehen.\footnote{Wer nur auf dem Mac \LaTeX-Dokumente erstellen will, dem sei Textmate von \href{https://macromates.com/}{https://macromates.com/} ausdrücklich empfohlen.} Alle Editoren können zwischen dem erzeugten PDF und dem \LaTeX-Quelltext schnell und einfach hin- und herspringen. Rechtschreibprüfung für viele Sprachen sind zuschaltbar.
 
 	Zunächst folgen auf \LaTeX spezialisierte Editoren, dann Editoren, die mehr als eine (Computer"=)Sprache verstehen. 
 	% Beachte "= bei (Computer"=)Sprache. Das ist ein shorthand um eine Trennung innerhalb des Wortes Computer zuzulassen. Sonst führen Bindstriche dazu, dass das Wort bis zum Bindestrich nicht getrennt werden darf. Siehe auch die Dokumentation zum Paket polyglossia bei den Spracheinstellungen zu german/deutsch.
@@ -223,7 +224,7 @@
 	\label{sub:VisualStudioCode}
 	Die Firma Microsoft stellt ebenfalls als freien und Open Source Editor \enquote{Visual Studio Code} zur Verfügung.\autocite{VSCode} Mit der Erweiterung \enquote{LaTeX-Workshop} entsteht eine vollfunktionsfähige \LaTeX-Entwicklungsumgebung. \enquote{Visual Studio Code} hat eine große Entwicklergemeinschaft und eine sehr große Anzahl von Nutzer*innen. 
 
-	Die Erweiterung \enquote{LaTeX-Workshop} erkennt automatisch, welches Dokument das Masterdokument ist, welche Dateien geändert wurden und neu compiliert werden müssen und prüft auch, ob sich an der Literaturdatenbank etwas geänder hat.\autocite{VSCode:LatexWorkshop}
+	Die Erweiterung \enquote{LaTeX-Workshop} erkennt automatisch, welches Dokument das Masterdokument ist, welche Dateien geändert wurden und neu compiliert werden müssen und prüft auch, ob sich an der Literaturdatenbank etwas geändert hat.\autocite{VSCode:LatexWorkshop}
 
 	Wichtigstes Argument für VS Code ist die sehr gute Integration der Versionsverwaltung \enquote{Git}.
 
@@ -255,6 +256,16 @@ Wer ohne Backups und ohne ein Versionskontrollsystem arbeitet, handelt leichtsin
 \label{JabRef}
 JabRef ist ein freier und  open source Literatur-Referenz Manager. JabRef basiert auf Java VM und ist gleichermaßen unter Windows, macOS und Linux einsetzbar. Die Oberfläche erschließt sich schnell, und es wird das für \LaTeX notwendige \inlinecode{*.bib} erzeugt. Die o.\,g. Editoren können auf die Literaturreferenzen der JabRef-Datenbank zugreifen.\autocite{JabRef}
 %	section{Literaturdatenbank – JabRef} (end)
+\section{Literaturverzeichnis – Tipps}
+Das Literaturverzeichnis wird mit dem Befehl \inlinecode{printbibliography} ausgegeben. Diesem Befehl kann am Ende mit eckigen Klammern ein neuer Name für das Literaturverzeichnis mitgegeben werden. Soll auch die gesamte Literatur ausgedruckt werden, selbst wenn diese in dem Text nicht zitiert wurde, dann den Befehl \inlinecode{nocite{*}} voran stellen.
+
+\begin{lstlisting}
+	\nocite{*}	%	Das gesamte Literaturverzeichnis ausgeben, auch die Einträge, die nicht im Text zitiert wurden.
+\printbibliography[title={Literaturverzeichnis und Web-Links}]	% Literaturverzeichnis umbenennen
+\end{lstlisting}
+
+\label{sec:LiteraturverzeichnisTipps}
+% section{Literaturverzeichnis}(end)
 
 
 
