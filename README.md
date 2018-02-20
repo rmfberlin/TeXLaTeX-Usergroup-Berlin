@@ -14,6 +14,9 @@ Ergänzungen, Verbesserungen und konstruktive Kommentare sind herzlich willkomme
 ## Verzeichnis report
 Das Verzeichnis report enthält eine Beispieldatei, die auf der KOMA-Script Klasse scrreprt beasiert. Diese ist für  längere, einseitig gedruckte Texte wie Hausarbeiten, Bachelor- oder Masterarbeiten geeignet. Mit Literaturverzeichnis (Datei literatur.bib), in dem auch	Quellen aus dem Internet zitiert werden.
 
+## Verzeichnis beamer
+Das Verzeichnis beamer enthält eine Beispieldatei für ein Präsentation auf Basis der beamer-Klasse.
+
 ## Tex/LaTeX Usergroup Berlin
 Die Tex/LaTeX Usergroup <https://www.meetup.com/de-DE/Berliner-Usergroup-TexLaTeX> ist offen für alle, die an typografisch korrekten und schönen Lösungen ihrer Texte interessiert sind und ihr Wissen gerne mit anderen teilen. In den Treffen kannst du Unterstützung für dein aktuelles LaTeX-Projekt erhalten und anderen bei ihren Projekten behilflich sein.
 
