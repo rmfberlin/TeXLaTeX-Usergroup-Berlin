@@ -31,7 +31,7 @@
 \usepackage{enumitem}	%to ease customizing the three basic list environments: enumerate, itemize and description
 \setlist[description]{leftmargin=24pt}	% Einrückung der description-Aufzählung festlegen
 % beamer templates, restoring font, color and template of the current beamer theme  gefunden in https://tex.stackexchange.com/questions/24371/does-enumitem-conflict-with-beamer-for-lists
-\setitemize{label=\usebeamerfont*{itemize item}%
+\setlist[itemize]{label=\usebeamerfont*{itemize item}%
   \usebeamercolor[fg]{itemize item}
   \usebeamertemplate{itemize item}}
 \usepackage[autostyle=true,german=guillemets]{csquotes}
@@ -123,20 +123,6 @@
 		\tableofcontents[currentsection]
     \end{frame}
 	}
-	
-	\section{Ein neuer Abschnitt}
-	\label{sec:EinneuerAbschnitt}
-		sdljflksdjfkllksdf
-		Öldsfldsf
-		lödsföldsf
-		\begin{itemize}
-			\item Einschraenkungen
-			\item Microsoft
-			\item Störerhaftung
-			\item sdjkfkasdfg
-			\item Störerhaftung sf 
-		\end{itemize}
-	% \section{Ein neuer Abschnitt}	(end)
   
   \section{Visual Studio Code}
   \label{sec:VisualStudioCode}

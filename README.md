@@ -27,4 +27,4 @@ Wir treffen uns jeden 2. Mittwoch im Monat von 18:30–22:00 Uhr im f2a_space in
 ## Interessante Links zu TeX/LaTeX
 * (de) Die Neue TEX-FAQ <https://texfragen.de> – Deutschsprachige sehr ausführliche Fragen und Antworten Seite
 * (en) Awesome LaTeX <https://github.com/egeerardyn/awesome-LaTeX> – eine kuratierte Liste mit fantastischem Zeug für das LaTeX Textsatzsystem (englisch)
-* (en) Visual LaTeX FAQ – ein PDF mit Beispielseiten: mit einem Klick auf einen Absatz oder ein Symbol öffnet sich eine Webseite, die erklärt, wie das in LaTeX gelöst wird. Das PDF funktioniert unter macOS high sierra leider nur im Safari-Browser (englisch)
+* (en) Visual LaTeX FAQ <http://ftp.fau.de/ctan/info/visualFAQ/visualFAQ.pdf> – ein PDF mit Beispielseiten: mit einem Klick auf einen Absatz oder ein Symbol öffnet sich eine Webseite, die erklärt, wie das in LaTeX gelöst wird. Das PDF funktioniert unter macOS high sierra leider nur im Safari-Browser (englisch)
