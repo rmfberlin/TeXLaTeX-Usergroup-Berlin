@@ -39,6 +39,11 @@
 %
 %
 \usepackage{graphicx}
+\usepackage[svgnames]{xcolor} % für farbige Hintergründe und farbige Schriften
+\newcommand{\inlinecode}[1]{\colorbox{Gainsboro}{\textsf{\textbackslash#1}}} % für den LaTeX-Code im Fließtext
+\newcommand{\inlinebefehl}[1]{\colorbox{Gainsboro}{\textsf{#1}}} % für den LaTeX-Code im Fließtext
+
+
 % \usepackage{MnSymbol} % Minion Pro Symbols
 % \usepackage{marvosym} % more symbols
 \usepackage{listings}
@@ -55,7 +60,7 @@
 % \usepackage{biolinum}	% eine freie, sehr schöne serifenlose Schrift
 						% eher für technische Dokumentationen
 \usepackage{libertine}	% eine freie, sehr schöne Schrift mit Serifen 
-\usepackage[base]{babel}	% https://tex.stackexchange.com/questions/400986/hyphenrules-environment-no-longer-works-with-polyglossia
+% \usepackage[base]{babel}	% https://tex.stackexchange.com/questions/400986/hyphenrules-environment-no-longer-works-with-polyglossia
 \usepackage{polyglossia}	% Polyglossia: An Alternative to Babel for XƎLATEX and LuaLATEX
 \setdefaultlanguage[spelling=new,	% neue deutsche Rechtschreibung
 					babelshorthands=true	%
@@ -83,9 +88,6 @@
 
 % Pakete für die Beispiel-Texte
 \usepackage{blindtext}	%	für die Blindtexte
-\usepackage[svgnames]{xcolor} % für farbige Hintergründe und farbige Schriften
-\newcommand{\inlinecode}[1]{\colorbox{Gainsboro}{\textsf{\textbackslash#1}}} % für den LaTeX-Code im Fließtext
-\newcommand{\inlinebefehl}[1]{\colorbox{Gainsboro}{\textsf{#1}}} % für den LaTeX-Code im Fließtext
 % Pakete für das Literaturverzeichnis
 \usepackage[%
 	style=footnote-dw,%
@@ -94,6 +96,10 @@
 	]%
 {biblatex}
 \addbibresource{literatur.bib}
+
+% Dieses Pakete ist nur für die Ausgabe der Tastatur-Symbole im Text. Es kann für andere Arbeiten gelöscht oder auskommentiert werden.
+% Unbedingt als letztes laden.
+\usepackage[os=mac, mackeys=symbols]{menukeys}
 
 %
 %	Informationen über dieses Dokument
@@ -198,8 +204,17 @@
 \label{cha:werkzeuge}
 \section{Empfehlenswerte Literatur}
 	\label{sec:literaturempfehlung}
-	Für den schnellen und erfolgversprechenden Einstieg in \LaTeX\ lohnt sich das Buch von \textcite{schlosser} und für die normgerechte wissenschaftliche Arbeit das Buch und die Website von \textcite{scholz}(mit Beispieldatei für \LaTeX\autocite{scholz:latexvorlage}).\ref{sub:nummerAufzaehlung}
+	Für den schnellen und erfolgversprechenden Einstieg in \LaTeX\ lohnt sich das Buch von \textcite{schlosser:einfuehrung} und für die normgerechte wissenschaftliche Arbeit das Buch und die Website von \textcite{scholz}(mit Beispieldatei für \LaTeX\autocite{scholz:latexvorlage}).
 	% section Empfehlenswerte Literatur (end)
+
+\section{Arbeitsorganisation -- Workflow}
+\label{ref:ArbeitsorganisationWorkflow}
+Es gibt viele Wege zum Erfolg, um eine wissenschaftliche Arbeit zu verfassen oder ein Buch zu schreiben.\autocite{rmf:workflow} Wichtig ist es, sich schon vorher ein paar Gedanken zur \enquote{Ethik, Inhalt und Form wissenschaftlicher Arbeiten, wissenschaftliches Handwerkszeug, Quellenarbeit, Methoden, Projektmanagement [und der] Präsentation zu machen}.\autocite{w3l} Auch lohnt es sich einen Blick auf die Vorgehensweise von Programmierer\*innen zu machen, gerade zum Thema Strukturierung des Quelltextes und zum Projektmanagement.\autocite{passig}
+
+
+
+
+% (end) section{Arbeitsorganisation -- Workflow}
 \section{Editor}
 \label{sec:editor}
 	Es gibt kaum ein emotionaleres Thema als \enquote{der richtige Editor} für \LaTeX. Die einen schwören auf \textsf{Emacs} oder \textsf{Vim} oder auf die speziellen \LaTeX-Editoren wie \textsf{Kile}, \textsf{\TeX{}maker}, \textsf{\TeX{}shop} usw. 
@@ -240,15 +255,18 @@
 Vielen Anfänger*innen unbekannt ist der Befehl \inlinebefehl{texdoc}. \inlinebefehl{texdoc} ist ein Kommandozeilenprogramm, dass die Dokumentation zu einem \LaTeX-Paket zeigt. Durch die Dokumentationen kann in vielen Fällen die beste Hilfe zu den jeweiligen Paketen erhalten werden. Allerdings ist die Sprache der Paketdokumentationen oftmals Englisch. 
 
 Um  \inlinebefehl{texdoc} aufzurufen, muss man ein Terminal-Fenster öffnen und den Befehl \\\inlinebefehl{texdoc name\_des\_pakets} eingeben. Zum Beispiel öffnet \inlinebefehl{texdoc url} die Dokumentation zum Paket \enquote{url.sty} in der Version 3.4 von Donald Arseneau, zuletzt aktualisiert am 2013-09-16. Dieses Paket wird in diesem Dokument benutzt, um Webadressen anzuzeigen.
+
+In Visual Studio Code kann mit der Tastenkombination \keys{\ctrl+\shift+\`{}} auch ein integriertes Terminal aufgerufen werden. Auch von hier kann mit dem \inlinebefehl{texdoc}-Befehl die Dokumentation zu Klassen und Paketen aufgerufen werden.
+
 % section{texdoc} (end)
 
-\section{Git}
+\section{Git -- Backups}
 \label{Git}
 Versionskontrollsysteme (VCS) protokollieren Änderungen an einer Datei oder einer Anzahl von Dateien über die Zeit hinweg, so dass man zu jedem Zeitpunkt auf Versionen und Änderungen zugreifen kann. Git als Versionskontrollsystem ermöglicht ebenso verschiedene Versionen einer Datei vergleichend anzuzeigen.
 
 \enquote{Git} ist ein freies und Open Source Versionskontrollsystem, das schnelle und sehr effizient arbeitet.\autocite{ProGit} Egal ob \enquote{nur} Hausarbeit oder große Projekte wie wissenschaftliche Abschlussarbeiten: regelmäßige Backups und ein Versionskontrollsystem helfen die eigene Arbeit zu sichern. 
 
-Wer ohne Backups und ohne ein Versionskontrollsystem arbeitet, handelt leichtsinning und gefährdet seinen Erfolg.
+Wer ohne Backups und ohne ein Versionskontrollsystem arbeitet, handelt leichtsinning und gefährdet seinen Erfolg(zum Thema Backups siehe auch \autocite{rmf:workflow}).
 
 % section{Git} (end)
 
