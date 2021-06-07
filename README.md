@@ -15,6 +15,9 @@ Das Verzeichnis report enthält eine Beispieldatei, die auf der KOMA-Script Klas
 ## Verzeichnis beamer
 Das Verzeichnis beamer enthält eine Beispieldatei für ein Präsentation auf Basis der beamer-Klasse.
 
+## Verzeichnis arara
+Das Verzeichnis arara enthält Beispiel-Dateien zu einem Artikel in der DTK (erscheint demnächst), um mit arara externe LaTeX-/PDF-Dokumente zu erzeugen und diese in eine Hauptdatei einzufügen.
+
 ## Interessante Links zu TeX/LaTeX
 * (de) Die Neue TEX-FAQ <https://texfragen.de> – Deutschsprachige sehr ausführliche Fragen und Antworten Seite
 * (en) Awesome LaTeX <https://github.com/egeerardyn/awesome-LaTeX> – eine kuratierte Liste mit fantastischem Zeug für das LaTeX Textsatzsystem (englisch)
