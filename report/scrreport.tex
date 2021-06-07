@@ -1,22 +1,23 @@
 % !TEX TS-program = xelatex
+% !BIB program = biber
+%	Autor: RMF Berlin
+%	Version: 0.2
+%	Erstellt: 29.01.2018
+%	letzte Änderung: 07.06.2021
+%	TeX/LaTeX-engine: Übersetzung mit xelatex
+% Codierung: UTF-8
 %	scrreport.tex mit literatur.bib für das Literaturverzeichnis
 %	Beispiel für einen längeren, einseitig gedruckten Text mit Literaturverzeichnis, in dem auch 
 %	Quellen aus dem Internet zitiert werden können
 %
-%	Basiert auf <KOMA-Script für den deutschsprachigen Raum mit DIN-Formaten
+%	Basiert auf KOMA-Script für den deutschsprachigen Raum mit DIN-Formaten
 %	Die aktuelle Dokumentation zu KOMA-Script gibt es hier:
 %	https://komascript.de/~mkohm/scrguide.pdf
 %
-%	Autor: RMF Berlin
-%	Version: 0.1
-%	Erstellt: 29.01.2018
-%	letzte Änderung: 01.02.2018
-%	TeX/LaTeX-engine: Übersetzung mit xelatex
-% Codierung: UTF-8
 %
 %
 \AtBeginDocument{%
-	\newcommand{\version}{Version: 0.2 \\im Februar~2018}%
+	\newcommand{\version}{Version: 0.2 \\im Juni~2021}%
 }	% Die Version wird auch auf dem Deckblatt ausgegeben
 
 \documentclass[12pt,	% 	Schriftgröße auf der auch der Seitenspiegel berechnet wird
@@ -86,6 +87,8 @@
   filecolor=orange,
 }
 
+
+
 % Pakete für die Beispiel-Texte
 \usepackage{blindtext}	%	für die Blindtexte
 % Pakete für das Literaturverzeichnis
@@ -93,8 +96,7 @@
 	style=footnote-dw,%
 	sorting=nty,	%	Sortierung des Literaturverzeichnisses nach (n)ame, (t)itle, (y)ear
 	backend=biber%
-	]%
-{biblatex}
+]{biblatex}
 \addbibresource{literatur.bib}
 
 % Dieses Pakete ist nur für die Ausgabe der Tastatur-Symbole im Text. Es kann für andere Arbeiten gelöscht oder auskommentiert werden.
@@ -115,7 +117,7 @@
 \tableofcontents
 \chapter{Aufbau  der Gliederung} % (fold)
 	\label{cha:aufbauGliederung}
-	Dieses Dokument basiert auf der Report-Klasse von KOMA-Script. \autocite{komascript:doku}	% unser erstes Zitat mit Literaturangabe
+	Dieses Dokument basiert auf der Report-Klasse von KOMA-Script. \cite{komascript:doku}	% unser erstes Zitat mit Literaturangabe
 	\section{Kapitel und Abschnitte}
 	\label{sec:KapitelAbschnitte}
 			Der Bericht lässt sich in Kapitel \inlinecode{chapter}, Abschnitte \inlinecode{section}, Unterabschnitte \inlinecode{subsection}, Unterunterabschnitte \inlinecode{subsubsection} und auf Gliederungsstufe fünf und sechs noch mit \inlinecode{paragraph} und \inlinecode{subparagraph} gliedern.\footnote{\LaTeX-Befehle sind in \colorbox{Gainsboro}{in graue Boxen} gesetzt.} 
@@ -281,8 +283,8 @@ JabRef ist ein freier und  open source Literatur-Referenz Manager. JabRef basier
 Das Literaturverzeichnis wird mit dem Befehl \inlinecode{printbibliography} ausgegeben. Diesem Befehl kann am Ende mit eckigen Klammern ein neuer Name für das Literaturverzeichnis mitgegeben werden. Soll auch die gesamte Literatur ausgedruckt werden, selbst wenn diese in dem Text nicht zitiert wurde, dann den Befehl \inlinecode{nocite{*}} voran stellen.
 
 \begin{lstlisting}
-	\nocite{*}	%	Das gesamte Literaturverzeichnis ausgeben, auch die Einträge, die nicht im Text zitiert wurden.
-\printbibliography[title={Literaturverzeichnis und Web-Links}]	% Literaturverzeichnis umbenennen
+	\nocite{*}
+	\printbibliography[title={Literaturverzeichnis und Web-Links}]
 \end{lstlisting}
 
 \label{sec:LiteraturverzeichnisTipps}
@@ -296,7 +298,6 @@ Das Literaturverzeichnis wird mit dem Befehl \inlinecode{printbibliography} ausg
 % chapter{Werkzeuge} (end)
 
 \nocite{*}	%	Das gesamte Literaturverzeichnis ausgeben, auch die Einträge, die nicht im Text zitiert wurden.
-
 \printbibliography[title={Literaturverzeichnis und Web-Links}]	% Literaturverzeichnis umbenennen
 	
 \end{document}
