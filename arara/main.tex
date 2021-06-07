@@ -1,0 +1,73 @@
+% !TEX TS-program = xelatex
+% arara: xelatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> directory: subdir,
+% arara: --> files: [ 
+% arara: --> dok-ext-01.tex, dok-ext-01.tex, dok-ext-01.tex,
+% arara: --> dok-ext-02.tex, dok-ext-02.tex, dok-ext-02.tex, 
+% arara: --> dok-ext-03.tex, dok-ext-03.tex, dok-ext-03.tex, 
+% arara: --> ]
+% arara: --> }
+% arara: xelatex: { 
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> files: [main.tex, main.tex, main.tex] }
+%	Autor: RMF Berlin
+%	Version: 0.1
+%	Erstellt: 07.06.2021
+%	letzte Änderung: 07.06.2021
+%	TeX/LaTeX-engine: Übersetzung mit xelatex
+% Codierung: UTF-8
+
+\AtBeginDocument{%
+	\newcommand{\version}{Version: 0.1 \\im Juni~2021}%
+}	% Die Version wird auch auf dem Deckblatt ausgegeben
+
+\documentclass[12pt, headings=small]{scrreprt}	
+\usepackage{xltxtra}	
+\usepackage{microtype}
+\usepackage{libertine}	
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new,	babelshorthands=true]{german}
+\usepackage{pdfpages}
+\usepackage{blindtext}
+
+
+\title{Mit \emph{arara} externe LaTeX-/PDF-Dokumente erzeugen und in eine Hauptdatei einfügen}
+\subtitle{Beispiel-Dateien -- Hauptdatei}
+\author{}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+  \chapter{Eins}
+		\label{cha:Eins}
+		\blindtext[2]
+
+		\blindtext[2]
+	% chapter Eins (end) 
+
+	\chapter{Zwei}
+		\label{cha:Zwei}
+		\blindtext[2]
+		
+		\blindtext[2]
+	% chapter Zwei (end)
+	\chapter{Drei}
+		\label{cha:Drei}
+		\blindtext[2]
+		
+		\blindtext[2]
+	% chapter Drei (end)
+
+  % \include{kap_a}
+	% \include{kap_b}
+	% \include{kap_c}
+	\includepdf[pages=-, link, addtotoc={1,chapter,1,Titel ext-dok-01,cha:ext-dok-01}]{subdir/dok-ext-01}
+	\includepdf[pages=-, link, addtotoc={1,chapter,1,Titel ext-dok-02,cha:ext-dok-02}]{subdir/dok-ext-02}
+	\includepdf[pages=-, link, addtotoc={1,chapter,1,Titel ext-dok-03,cha:ext-dok-03}]{subdir/dok-ext-03}
+	% \include{kap_n}
+\end{document}

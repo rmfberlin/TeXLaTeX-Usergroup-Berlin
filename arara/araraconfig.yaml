@@ -1,0 +1,6 @@
+!config
+language: de
+logging: true
+verbose: false
+paths:
+- '.'

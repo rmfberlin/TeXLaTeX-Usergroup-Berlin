@@ -1,0 +1,50 @@
+% !TEX TS-program = xelatex
+%	Autor: RMF Berlin
+%	Version: 0.1
+%	Erstellt: 07.06.2021
+%	letzte Änderung: 07.06.2021
+%	TeX/LaTeX-engine: Übersetzung mit xelatex
+% Codierung: UTF-8
+
+\AtBeginDocument{%
+	\newcommand{\version}{Dokument 02 \\im Juni~2021}%
+}	% Die Version wird auch auf dem Deckblatt ausgegeben
+
+\documentclass[12pt, headings=small]{scrreprt}	
+\usepackage{xltxtra}	
+\usepackage{microtype}
+\usepackage{libertine}	
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new,	babelshorthands=true]{german}
+\usepackage{blindtext}
+
+
+\title{Externes Dokument 02}
+\subtitle{Beispiel-Datei 02}
+\author{}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+  \chapter{02-Eins}
+		\label{cha:Eins}
+		\blindtext[2]
+
+		\blindtext[2]
+	% chapter Eins (end) 
+
+	\chapter{02-Zwei}
+		\label{cha:Zwei}
+		\blindtext[2]
+		
+		\blindtext[2]
+	% chapter Zwei (end)
+	\chapter{02-Drei}
+		\label{cha:Drei}
+		\blindtext[2]
+		
+		\blindtext[2]
+	% chapter Drei (end)
+\end{document}
